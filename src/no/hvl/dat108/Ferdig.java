@@ -16,10 +16,12 @@ public class Ferdig extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("bruker") == null)  {
+
+        if (session.getAttribute("bruker") == null)  {
             response.sendRedirect("/logginn");
             return;
         }else if (session != null) {
+            session.invalidate();
             request.getRequestDispatcher("WEB-INF/Ferdig.jsp").forward(request, response);
             return;
         }
