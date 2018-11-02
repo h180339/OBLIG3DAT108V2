@@ -1,5 +1,7 @@
 package no.hvl.dat108;
 
+import org.apache.commons.text.StringEscapeUtils;
+
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,8 +18,8 @@ public class Logginn extends HttpServlet {
     private BrukerEAO brukerEAO;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String mobil = request.getParameter("mobil");
-        String passord = request.getParameter("passord");
+        String mobil = StringEscapeUtils.escapeHtml4(request.getParameter("mobil"));
+        String passord = StringEscapeUtils.escapeHtml4(request.getParameter("passord"));
 
 
         //tester om mobil eller passord er tom
