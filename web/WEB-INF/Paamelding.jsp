@@ -15,36 +15,36 @@
         <div class="pure-control-group">
             <label for="fornavn">Fornavn:</label>
             <input id="fornavn" type="text" name="fornavn" value="${skjema.fornavn}"/>
-            <span class="error" id="ufornavn"></span>
+            <span class="error" id="ufornavn">${skjema.fornavnFeilmelding}</span>
         </div>
 
         <div class="pure-control-group">
             <label for="etternavn">Etternavn:</label> <input id="etternavn" type="text" name="etternavn"
                                                              value="${skjema.etternavn}"/>
-            <span class="error" id="uetternavn"></span>
+            <span class="error" id="uetternavn">${skjema.etternavnFeilmelding}</span>
         </div>
 
         <div class="pure-control-group">
             <label for="mobil">Mobil (8 siffer):</label> <input id="mobil" type="text" name="mobil"
                                                                 value="${skjema.mobil}"/>
-            <span class="error" id="umobil"></span>
+            <span class="error" id="umobil">${skjema.tlfNrFeilmelding}</span>
         </div>
         <div class="pure-control-group">
             <label for="password">Passord:</label> <input id="password" type="password"
                                                           name="passord" value="${skjema.passord}"/>
-            <span class="error" id="upassord"></span>
+            <span class="error" id="upassord">${skjema.passordFeilmelding}</span>
         </div>
         <div class="pure-control-group">
             <label for="passordRepetert">Passord repetert:</label> <input id="passordRepetert"
                                                                           type="password" name="passordRepetert"
                                                                           value="${skjema.repetePassord}"/>
-            <span class="error" id="passordrep"></span>
+            <span class="error" id="passordrep">${skjema.repetePassordFeilmelding}</span>
         </div>
         <div class="pure-control-group">
             <label for="kjonn">Kjønn:</label>
             <input id="mann" type="checkbox" onclick="valkjoeen()" name="mann" value="${skjema.mann}"/>mann
             <input id="dame" type="checkbox" onclick="valkjoeen()" name="kvinne" value="${skjema.kvinne}"/>kvinne
-            <span class="error" id="kjonn"></span>
+            <span class="error" id="kjonn">${skjema.kjonnFeilmelding} </span>
         </div>
         <div class="pure-controls">
             <button type="submit" class="pure-button pure-button-primary" id="paamelding">Meld

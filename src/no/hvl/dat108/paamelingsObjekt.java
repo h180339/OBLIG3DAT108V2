@@ -64,7 +64,7 @@ public class paamelingsObjekt {
     }
 
     public boolean isEtternavnGyldig() {
-        return etternavn.matches("^[A-ZØÆÅ][a-zøæåA-ZØÆÅ-]{1,20}");
+        return etternavn.matches("^[A-Z-ØÆÅ][a-zøæåA-ZØÆÅ-]{1,20}");
     }
 
     public boolean isTlfGyldig() {
