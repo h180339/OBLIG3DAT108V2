@@ -1,0 +1,15 @@
+.error {
+    color: red;
+}
+
+.deltager_header {
+    background-color: #cccccc;
+}
+
+.deltager_signed_in {
+    background-color: #aaffaa;
+}
+
+.deltager {
+    background-color: #ffffff;
+}
