@@ -4,8 +4,8 @@
 <head>
     <meta charset="ISO-8859-1">
     <!-- Fra https://purecss.io/ -->
-    <link rel="stylesheet"
-          href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Påmelding</title>
 </head>
 <body>
@@ -15,37 +15,39 @@
         <div class="pure-control-group">
             <label for="fornavn">Fornavn:</label>
             <input id="fornavn" type="text" name="fornavn" value="${skjema.fornavn}"/>
-            <font color="red" style="display: none" id="ufornavn">ugyldig fornavn</font>
+            <span class="error" id="ufornavn"></span>
         </div>
+
         <div class="pure-control-group">
-            <label for="etternavn">Etternavn:</label> <input id="etternavn" type="text"
-                                                             name="etternavn" value="${skjema.etternavn}"/>
-            <font color="red" style="display: none" id="uetternavn">ugylig etternavn</font>
+            <label for="etternavn">Etternavn:</label> <input id="etternavn" type="text" name="etternavn"
+                                                             value="${skjema.etternavn}"/>
+            <span class="error" id="uetternavn"></span>
         </div>
+
         <div class="pure-control-group">
             <label for="mobil">Mobil (8 siffer):</label> <input id="mobil" type="text" name="mobil"
                                                                 value="${skjema.mobil}"/>
-            <font color="red" style="display: none" id="umobil">Ugyldig mobilnr</font>
+            <span class="error" id="umobil"></span>
         </div>
         <div class="pure-control-group">
             <label for="password">Passord:</label> <input id="password" type="password"
                                                           name="passord" value="${skjema.passord}"/>
-            <font color="red" style="display: none" id="upassord">Passord m? minst ha 5 tegn</font>
+            <span class="error" id="upassord"></span>
         </div>
         <div class="pure-control-group">
             <label for="passordRepetert">Passord repetert:</label> <input id="passordRepetert"
                                                                           type="password" name="passordRepetert"
                                                                           value="${skjema.repetePassord}"/>
-            <font color="red" style="display: none" id="passordrep">passordene er ikke like</font>
+            <span class="error" id="passordrep"></span>
         </div>
         <div class="pure-control-group">
             <label for="kjonn">Kjønn:</label>
             <input id="mann" type="checkbox" onclick="valkjoeen()" name="mann" value="${skjema.mann}"/>mann
             <input id="dame" type="checkbox" onclick="valkjoeen()" name="kvinne" value="${skjema.kvinne}"/>kvinne
-            <font color="red" style="display: none" id="kjonn">velg kjønn!</font>
+            <span class="error" id="kjonn"></span>
         </div>
         <div class="pure-controls">
-            <button  type="submit" class="pure-button pure-button-primary" id="paamelding">Meld
+            <button type="submit" class="pure-button pure-button-primary" id="paamelding">Meld
                 meg på
             </button>
         </div>

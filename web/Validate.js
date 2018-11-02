@@ -8,17 +8,15 @@ function altgyldig() {
         && valkjoeen()
 
 }
-
-
 function valfornavn() {
     var fornavn = document.getElementById("fornavn");
     var text = document.getElementById("ufornavn");
     var regex = /^[A-Z][a-z]{1,20}$/;
     if (fornavn.value.match(regex)) {
-        text.style.display = "none";
+        text.innerText = "";
         return true;
     } else {
-        text.style.display = "block";
+        text.innerText = "Ugyldig fornavn";
         return false;
     }
 }
@@ -28,10 +26,10 @@ function valetternavn() {
     var text = document.getElementById("uetternavn");
     var regex = /^[A-Z][a-z]{1,20}$/;
     if (etternavn.value.match(regex)) {
-        text.style.display = "none";
+        text.innerText = "";
         return true;
     } else {
-        text.style.display = "block";
+        text.innerText = "Ugyldig etternavn";
         return false;
     }
 }
@@ -41,26 +39,23 @@ function valMobil() {
     var text = document.getElementById("umobil");
     var regex = /^[0-9]{8}$/;
     if (mobil.value.match(regex)) {
-        text.style.display = "none";
+        text.innerText = "";
         return true;
     } else {
-        text.style.display = "block";
+        text.innerText = "Ugyldig mobilNr";
         return false;
     }
 }
-
-var passord = document.getElementById("password");
-passord.addEventListener("input", valPassord);
 
 function valPassord() {
     var passord = document.getElementById("password");
     var text = document.getElementById("upassord");
 
     if (passord.value == 0 || passord.value.length < 5) {
-        text.style.display = "block"
+        text.innerText = "Passord må minst ha 5 tegn"
         return false;
     } else {
-        text.style.display = "none";
+        text.innerText = "";
         return true;
     }
 }
@@ -72,10 +67,10 @@ function valPassordene() {
     var text = document.getElementById("passordrep");
 
     if (passord.value != passordrep.value) {
-        text.style.display = "block";
+        text.innerText = "Passodene matcher ikke";
         return false;
     } else {
-        text.style.display = "none";
+        text.innerText = "";
         return true;
     }
 }
@@ -94,10 +89,10 @@ function valkjoeen() {
     }
 
     if (x == 0 || x > 1) {
-        text.style.display = "block";
+        text.innerText = "velg mann eller kvinne";
         return false;
     } else {
-        text.style.display = "none";
+        text.innerText = "";
         return true;
     }
 }
@@ -112,6 +107,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var mobil = document.getElementById("mobil");
     mobil.addEventListener("input", valMobil);
+
+    var passord = document.getElementById("password");
+    passord.addEventListener("input", valPassord);
 
     var passordrep = document.getElementById("passordRepetert");
     passordrep.addEventListener("input", valPassordene);
