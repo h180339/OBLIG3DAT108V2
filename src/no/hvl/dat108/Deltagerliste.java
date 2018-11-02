@@ -24,8 +24,8 @@ public class Deltagerliste extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
 
+        HttpSession session = request.getSession(false);
         if (session != null) {
             Bruker bruker = (Bruker) session.getAttribute("bruker");
 
