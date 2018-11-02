@@ -26,7 +26,7 @@
 
         <div class="pure-control-group">
             <label for="mobil">Mobil (8 siffer):</label> <input id="mobil" type="text" name="mobil"
-                                                                value="${skjema.mobil}"/>
+                                                                value="${skjema.tlfNr}"/>
             <span class="error" id="umobil">${skjema.tlfNrFeilmelding}</span>
         </div>
         <div class="pure-control-group">

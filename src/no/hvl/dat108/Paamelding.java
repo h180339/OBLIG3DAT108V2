@@ -33,12 +33,10 @@ public class Paamelding extends HttpServlet {
             sesjon.setMaxInactiveInterval(100000);
 
             sesjon.setAttribute("bruker", bruker);
-
             sesjon.setAttribute("fornavn", bruker.getFornavn());
             sesjon.setAttribute("etternavn", bruker.getEtternavn());
             sesjon.setAttribute("mobil", bruker.getMobil());
             sesjon.setAttribute("kjonn", bruker.getKjonn());
-
             response.sendRedirect("/paameldingsBekreftelse");
         }else{
             skjema.settOppFeilmeldinger();
