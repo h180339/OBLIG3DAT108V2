@@ -1,7 +1,5 @@
 package no.hvl.dat108;
-
 import javax.servlet.http.HttpServletRequest;
-
 
 public class paamelingsObjekt {
     private String fornavn;
