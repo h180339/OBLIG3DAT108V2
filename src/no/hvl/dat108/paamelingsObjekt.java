@@ -52,10 +52,10 @@ public class paamelingsObjekt {
         }
         if (!isRepeterPassordGyldig()) {
             repetePassord = "";
-            repetePassordFeilmelding = "Passordene må være like";
+            repetePassordFeilmelding = "Passordene er ikke like";
         }
         if (!isKjonnGyldig()) {
-            kjonnFeilmelding = "Du må oppgi mann";
+            kjonnFeilmelding = "velg mann eller kvinne";
         }
     }
 
@@ -83,6 +83,22 @@ public class paamelingsObjekt {
 
     public boolean isKjonnGyldig() {
         return kvinne != null || mann != null;
+    }
+
+    public void setFornavn(String fornavn) {
+        this.fornavn = fornavn;
+    }
+
+    public void setEtternavn(String etternavn) {
+        this.etternavn = etternavn;
+    }
+
+    public void setMobil(String mobil) {
+        this.mobil = mobil;
+    }
+
+    public void setPassord(String passord) {
+        this.passord = passord;
     }
 
     public String getFornavn() {

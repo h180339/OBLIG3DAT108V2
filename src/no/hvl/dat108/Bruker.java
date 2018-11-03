@@ -17,6 +17,7 @@ public class Bruker {
     private String passordHash;
     private String kjonn;
 
+
     public Bruker(HttpServletRequest request) {
         this.fornavn = request.getParameter("fornavn");
         this.etternavn = request.getParameter("etternavn");

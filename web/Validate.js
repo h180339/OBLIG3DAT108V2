@@ -1,13 +1,10 @@
 "use strict"
 
-function altgyldig() {
-    return valfornavn()
-        && valetternavn()
-        && valPassord()
-        && valPassordene()
-        && valkjoeen()
-
-}
+/**
+ * validrer fornavn
+ * får ikke til å ta hensyn til ÆØÅ i js
+ * @returns {boolean}
+ */
 function valfornavn() {
     var fornavn = document.getElementById("fornavn");
     var text = document.getElementById("ufornavn");
@@ -16,11 +13,16 @@ function valfornavn() {
         text.innerText = "";
         return true;
     } else {
-        text.innerText = "Ugyldig fornavn";
+        text.innerText = "Ugyldig fornvan";
         return false;
     }
 }
 
+/**
+ * Validerer etternavn
+ * får ikke til å ta hensyn til ÆØÅ i js
+ * @returns {boolean}
+ */
 function valetternavn() {
     var etternavn = document.getElementById("etternavn");
     var text = document.getElementById("uetternavn");
@@ -34,6 +36,11 @@ function valetternavn() {
     }
 }
 
+/**
+ * validerer Mobilnummer
+ * må ha lengde 8 siffer
+ * @returns {boolean}
+ */
 function valMobil() {
     var mobil = document.getElementById("mobil");
     var text = document.getElementById("umobil");
@@ -42,17 +49,22 @@ function valMobil() {
         text.innerText = "";
         return true;
     } else {
-        text.innerText = "Ugyldig mobilNr";
+        text.innerText = "Ugyldig mobil";
         return false;
     }
 }
 
+/**
+ * vailiderer passord
+ * min lengde 5 tegn
+ * @returns {boolean}
+ */
 function valPassord() {
     var passord = document.getElementById("password");
     var text = document.getElementById("upassord");
 
-    if (passord.value == 0 || passord.value.length < 5) {
-        text.innerText = "Passord må minst ha 5 tegn"
+    if (passord.value.length < 5) {
+        text.innerText = "Ugyldig passord"
         return false;
     } else {
         text.innerText = "";
@@ -60,14 +72,17 @@ function valPassord() {
     }
 }
 
-
+/**
+ * sjekker at passordene som skrives inn er like
+ * @returns {boolean}
+ */
 function valPassordene() {
     var passord = document.getElementById("password");
     var passordrep = document.getElementById("passordRepetert");
     var text = document.getElementById("passordrep");
 
     if (passord.value != passordrep.value) {
-        text.innerText = "Passodene matcher ikke";
+        text.innerText = "passordene er ikke like";
         return false;
     } else {
         text.innerText = "";
@@ -75,6 +90,10 @@ function valPassordene() {
     }
 }
 
+/**
+ * sjekker at man har valgt et kjønn og bare ett kjønn
+ * @returns {boolean}
+ */
 function valkjoeen() {
     var mann = document.getElementById("mann");
     var dame = document.getElementById("dame");
@@ -97,6 +116,9 @@ function valkjoeen() {
     }
 }
 
+/**
+ * event listeners for js validering
+ */
 document.addEventListener("DOMContentLoaded", function () {
 
     var fornavn = document.getElementById("fornavn");
@@ -113,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var passordrep = document.getElementById("passordRepetert");
     passordrep.addEventListener("input", valPassordene);
+
 });
 
 
