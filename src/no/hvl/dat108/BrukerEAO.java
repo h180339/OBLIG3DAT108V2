@@ -12,8 +12,16 @@ public class BrukerEAO {
     @PersistenceContext(name = "DeltakerPU")
     private EntityManager em;
 
-    public void leggTilbruker(Bruker s) {
-        em.persist(s);
+    public boolean leggTilbruker(Bruker s) {
+        Bruker b = hentBruker(s.getMobil());
+        if (b == null) {
+            em.persist(s);
+            return true;
+        }else if (!s.getMobil().equals(b.getMobil())) {
+            em.persist(s);
+            return true;
+        }
+        return false;
     }
 
     public Bruker hentBruker(String mobil) {

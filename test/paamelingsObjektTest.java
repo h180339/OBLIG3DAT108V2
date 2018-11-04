@@ -1,5 +1,3 @@
-package Oblig3Test;
-
 import no.hvl.dat108.paamelingsObjekt;
 import org.junit.Test;
 

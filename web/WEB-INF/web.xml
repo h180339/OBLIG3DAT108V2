@@ -7,5 +7,21 @@
     <welcome-file-list>
         <welcome-file>paamelding</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>Paamelding</servlet-name>
+        <servlet-class>no.hvl.dat108.Paamelding</servlet-class>
+        <init-param>
+            <param-name>LoginTime</param-name>
+            <param-value>100000</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Logginn</servlet-name>
+        <servlet-class>no.hvl.dat108.Logginn</servlet-class>
+        <init-param>
+            <param-name>LoginTime</param-name>
+            <param-value>100000</param-value>
+        </init-param>
+    </servlet>
 
 </web-app>

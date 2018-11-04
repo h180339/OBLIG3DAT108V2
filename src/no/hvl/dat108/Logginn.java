@@ -13,9 +13,15 @@ import java.io.IOException;
 
 @WebServlet(name = "Logginn", urlPatterns = "/logginn")
 public class Logginn extends HttpServlet {
+    int loginTime;
 
     @EJB
     private BrukerEAO brukerEAO;
+
+    @Override
+    public void init() throws ServletException {
+        loginTime = Integer.parseInt(getServletConfig().getInitParameter("LoginTime"));
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String mobil = StringEscapeUtils.escapeHtml4(request.getParameter("mobil"));
@@ -36,7 +42,7 @@ public class Logginn extends HttpServlet {
                 sesjon.invalidate();
             }
             sesjon = request.getSession(true);
-            sesjon.setMaxInactiveInterval(100000);
+            sesjon.setMaxInactiveInterval(loginTime);
             sesjon.setAttribute("bruker", testBruker);
             response.sendRedirect("/deltagerliste");
         } else {

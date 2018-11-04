@@ -84,6 +84,10 @@ public class paamelingsObjekt {
         return repetePassord == null || repetePassord.equals("") ? false : repetePassord.equals(passord);
     }
 
+    public void setTlfNrFeilmelding(String tlfNrFeilmelding) {
+        this.tlfNrFeilmelding = tlfNrFeilmelding;
+    }
+
     public boolean isKjonnGyldig() {
         return kvinne != null || mann != null;
     }
