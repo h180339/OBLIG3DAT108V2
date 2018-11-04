@@ -2,13 +2,12 @@
 
 /**
  * validrer fornavn
- * får ikke til å ta hensyn til ÆØÅ i js
  * @returns {boolean}
  */
 function valfornavn() {
     var fornavn = document.getElementById("fornavn");
     var text = document.getElementById("ufornavn");
-    var regex = /^[A-Z][a-z]{1,20}$/;
+    var regex = /(^[A-Z\u00C6\u00D8\u00C5][a-z\u00E6\u00F8\u00E5]{1,20}$)/;
     if (fornavn.value.match(regex)) {
         text.innerText = "";
         return true;
@@ -20,13 +19,12 @@ function valfornavn() {
 
 /**
  * Validerer etternavn
- * får ikke til å ta hensyn til ÆØÅ i js
  * @returns {boolean}
  */
 function valetternavn() {
     var etternavn = document.getElementById("etternavn");
     var text = document.getElementById("uetternavn");
-    var regex = /^[A-Z][a-z]{1,20}$/;
+    var regex = /(^[A-Z\u00C6\u00D8\u00C5][a-z\u00E6\u00F8\u00E5]{1,20}$)/;
     if (etternavn.value.match(regex)) {
         text.innerText = "";
         return true;
@@ -82,7 +80,7 @@ function valPassordene() {
     var text = document.getElementById("passordrep");
 
     if (passord.value != passordrep.value) {
-        text.innerText = "passordene er ikke like";
+        text.innerText = "Passordene er ikke like";
         return false;
     } else {
         text.innerText = "";
