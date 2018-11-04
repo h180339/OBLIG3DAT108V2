@@ -19,14 +19,14 @@ public class Bruker {
 
 
     public Bruker(HttpServletRequest request) {
-        this.fornavn = request.getParameter("fornavn");
-        this.etternavn = request.getParameter("etternavn");
-        this.mobil = request.getParameter("mobil");
-        this.kjonn = request.getParameter("kjoenn");
-        this.passordHash = request.getParameter("passord");
-        if (request.getParameter("mann") != null) {
+        this.fornavn = StringEscapeUtils.escapeHtml4(request.getParameter("fornavn"));
+        this.etternavn =StringEscapeUtils.escapeHtml4(request.getParameter("etternavn"));
+        this.mobil = StringEscapeUtils.escapeHtml4(request.getParameter("mobil"));
+        this.kjonn = StringEscapeUtils.escapeHtml4(request.getParameter("kjoenn"));
+        this.passordHash = StringEscapeUtils.escapeHtml4(PassordUtil.krypterPassord(request.getParameter("passord")));
+        if (StringEscapeUtils.escapeHtml4(request.getParameter("mann")) != null) {
             this.kjonn = "mann";
-        } else if (request.getParameter("kvinne") != null) {
+        } else if (StringEscapeUtils.escapeHtml4(request.getParameter("kvinne")) != null) {
             this.kjonn = "kvinne";
         }
 
