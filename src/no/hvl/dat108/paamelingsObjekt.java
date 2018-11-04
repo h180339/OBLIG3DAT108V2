@@ -1,4 +1,5 @@
 package no.hvl.dat108;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class paamelingsObjekt {
@@ -24,6 +25,10 @@ public class paamelingsObjekt {
         this.repetePassord = request.getParameter("passordRepetert");
         this.mann = request.getParameter("mann");
         this.kvinne = request.getParameter("kvinne");
+    }
+
+    public paamelingsObjekt() {
+
     }
 
 
