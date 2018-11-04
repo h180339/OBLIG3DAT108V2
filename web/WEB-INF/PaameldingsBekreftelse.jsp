@@ -17,6 +17,6 @@
     &nbsp;&nbsp;&nbsp;${mobil}<br /> &nbsp;&nbsp;&nbsp;${kjonn}
 
 </p>
-<a href="deltagerliste">Gå til deltagerlisten</a>
+<a href="./deltagerliste">Gå til deltagerlisten</a>
 </body>
 </html>

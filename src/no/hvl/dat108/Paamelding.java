@@ -53,7 +53,7 @@ public class Paamelding extends HttpServlet {
                 skjema.setTlfNrFeilmelding("Telefon nummer er allerede registrert");
                 skjema.setMobil("");
                 request.getSession().setAttribute("skjema", skjema);
-                response.sendRedirect("/paamelding");
+                response.sendRedirect("./paamelding");
                 return;
             }
             HttpSession sesjon = request.getSession(false);
@@ -69,11 +69,11 @@ public class Paamelding extends HttpServlet {
             sesjon.setAttribute("etternavn", bruker.getEtternavn());
             sesjon.setAttribute("mobil", bruker.getMobil());
             sesjon.setAttribute("kjonn", bruker.getKjonn());
-            response.sendRedirect("/paameldingsBekreftelse");
+            response.sendRedirect("./paameldingsBekreftelse");
         }else{
             skjema.settOppFeilmeldinger();
             request.getSession().setAttribute("skjema", skjema);
-            response.sendRedirect("/paamelding");
+            response.sendRedirect("./paamelding");
         }
 
 

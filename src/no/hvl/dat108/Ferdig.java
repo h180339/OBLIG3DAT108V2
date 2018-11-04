@@ -30,13 +30,13 @@ public class Ferdig extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session.getAttribute("bruker") == null)  {
-            response.sendRedirect("/logginn");
+            response.sendRedirect("./logginn");
             return;
         }else if (session != null) {
             session.invalidate();
             request.getRequestDispatcher("WEB-INF/Ferdig.jsp").forward(request, response);
             return;
         }
-        response.sendRedirect("/logginn");
+        response.sendRedirect("./logginn");
     }
 }

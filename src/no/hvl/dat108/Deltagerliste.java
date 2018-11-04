@@ -21,10 +21,6 @@ public class Deltagerliste extends HttpServlet {
 
     @EJB
     private BrukerEAO brukerEAO;
-
-
-
-
     /**
      * Shows the list of registered users if user is logged in, if user is not logged the user will be redirected to a log in page
      *
@@ -52,7 +48,7 @@ public class Deltagerliste extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/Deltagerliste.jsp").forward(request, response);
                 return;
             }
-            response.sendRedirect("/logginn");
+            response.sendRedirect("./logginn");
         }
 
     }
