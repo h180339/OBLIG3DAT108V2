@@ -11,6 +11,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A servlet that shows the list of registered users
+ * @author Gruppe 19
+ * @version 1.0.0
+ */
 @WebServlet(name = "Deltagerliste", urlPatterns = "/deltagerliste")
 public class Deltagerliste extends HttpServlet {
 
@@ -18,11 +23,16 @@ public class Deltagerliste extends HttpServlet {
     private BrukerEAO brukerEAO;
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-    }
-
+    /**
+     * Shows the list of registered users if user is logged in, if user is not logged the user will be redirected to a log in page
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
@@ -37,7 +47,6 @@ public class Deltagerliste extends HttpServlet {
                     String cname = bruker.getMobil() == b.getMobil() ? "deltager_signed_in" : "deltager";
                     rows.add(new DeltagerRowHelper(b, cname));
                 }
-
                 request.setAttribute("rows", rows);
 
                 request.getRequestDispatcher("WEB-INF/Deltagerliste.jsp").forward(request, response);

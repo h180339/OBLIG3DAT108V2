@@ -10,6 +10,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
+/**
+ * A servlet that shows a page where a user can sign up for a party
+ * @author Gruppe 19
+ * @version 1.0.0
+ */
 @WebServlet(name = "Paamelding", urlPatterns = "/paamelding")
 public class Paamelding extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -18,11 +23,24 @@ public class Paamelding extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;
 
+    /**
+     * Gets the init parameter and assigns it to loginTime
+     *
+     * @throws ServletException
+     */
     @Override
     public void init() throws ServletException {
         loginTime = Integer.parseInt(getServletConfig().getInitParameter("LoginTime"));
     }
 
+    /**
+     * Checks if inputs are correct, creates a user object and sends it to database, then redirects user to a page with list of users/participants
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         paamelingsObjekt skjema = new paamelingsObjekt(request);
@@ -61,6 +79,14 @@ public class Paamelding extends HttpServlet {
 
     }
 
+    /**
+     * Shows page where user can register for party
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/Paamelding.jsp").forward(request, response);
     }

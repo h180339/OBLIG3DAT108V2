@@ -42,8 +42,8 @@
         </div>
         <div class="pure-control-group">
             <label for="kjonn">Kjønn:</label>
-            <input id="mann" type="checkbox" onclick="valkjoeen()" name="mann" value="${skjema.mann}"/>mann
-            <input id="dame" type="checkbox" onclick="valkjoeen()" name="kvinne" value="${skjema.kvinne}"/>kvinne
+            <input id="mann" type="checkbox" onclick="valkjoeen()" name="mann" value="${skjema.mann}" ${skjema.manCheck}/>mann
+            <input id="dame" type="checkbox" onclick="valkjoeen()" name="kvinne" value="${skjema.kvinne}" ${skjema.dameCheck}/>kvinne
             <span class="error" id="kjonn">${skjema.kjonnFeilmelding} </span>
         </div>
         <div class="pure-controls">

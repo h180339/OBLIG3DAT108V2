@@ -8,11 +8,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * A serlvet that shows a log out page
+ * @author Gruppe 19
+ * @version 1.0.0
+ */
 @WebServlet(name = "Ferdig", urlPatterns = "/loggut")
 public class Ferdig extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    }
 
+
+    /**
+     * Shows the log out page if you just logged out, if not it will redirect you to a log in page
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);

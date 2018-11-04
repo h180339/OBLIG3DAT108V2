@@ -5,9 +5,9 @@
  * @returns {boolean}
  */
 function valfornavn() {
-    var fornavn = document.getElementById("fornavn");
-    var text = document.getElementById("ufornavn");
-    var regex = /(^[A-Z\u00C6\u00D8\u00C5][a-z\u00E6\u00F8\u00E5]{1,20}$)/;
+    let fornavn = document.getElementById("fornavn");
+    let text = document.getElementById("ufornavn");
+    let regex = /(^[A-Z\u00C6\u00D8\u00C5][a-z\u00E6\u00F8\u00E5]{1,20}$)/;
     if (fornavn.value.match(regex)) {
         text.innerText = "";
         return true;
@@ -22,9 +22,9 @@ function valfornavn() {
  * @returns {boolean}
  */
 function valetternavn() {
-    var etternavn = document.getElementById("etternavn");
-    var text = document.getElementById("uetternavn");
-    var regex = /(^[A-Z\u00C6\u00D8\u00C5][a-z\u00E6\u00F8\u00E5]{1,20}$)/;
+    let etternavn = document.getElementById("etternavn");
+    let text = document.getElementById("uetternavn");
+    let regex = /(^[A-Z\u00C6\u00D8\u00C5][a-z\u00E6\u00F8\u00E5]{1,20}$)/;
     if (etternavn.value.match(regex)) {
         text.innerText = "";
         return true;
@@ -40,9 +40,9 @@ function valetternavn() {
  * @returns {boolean}
  */
 function valMobil() {
-    var mobil = document.getElementById("mobil");
-    var text = document.getElementById("umobil");
-    var regex = /^[0-9]{8}$/;
+    let mobil = document.getElementById("mobil");
+    let text = document.getElementById("umobil");
+    let regex = /^[0-9]{8}$/;
     if (mobil.value.match(regex)) {
         text.innerText = "";
         return true;
@@ -58,8 +58,8 @@ function valMobil() {
  * @returns {boolean}
  */
 function valPassord() {
-    var passord = document.getElementById("password");
-    var text = document.getElementById("upassord");
+    let passord = document.getElementById("password");
+    let text = document.getElementById("upassord");
 
     if (passord.value.length < 5) {
         text.innerText = "Ugyldig passord"
@@ -75,9 +75,9 @@ function valPassord() {
  * @returns {boolean}
  */
 function valPassordene() {
-    var passord = document.getElementById("password");
-    var passordrep = document.getElementById("passordRepetert");
-    var text = document.getElementById("passordrep");
+    let passord = document.getElementById("password");
+    let passordrep = document.getElementById("passordRepetert");
+    let text = document.getElementById("passordrep");
 
     if (passord.value != passordrep.value) {
         text.innerText = "Passordene er ikke like";
@@ -93,10 +93,10 @@ function valPassordene() {
  * @returns {boolean}
  */
 function valkjoeen() {
-    var mann = document.getElementById("mann");
-    var dame = document.getElementById("dame");
-    var text = document.getElementById("kjonn");
-    var x = 0;
+    let mann = document.getElementById("mann");
+    let dame = document.getElementById("dame");
+    let text = document.getElementById("kjonn");
+    let x = 0;
 
     if (mann.checked == true) {
         x++;
@@ -119,19 +119,19 @@ function valkjoeen() {
  */
 document.addEventListener("DOMContentLoaded", function () {
 
-    var fornavn = document.getElementById("fornavn");
+    let fornavn = document.getElementById("fornavn");
     fornavn.addEventListener("input", valfornavn);
 
-    var etternavn = document.getElementById("etternavn");
+    let etternavn = document.getElementById("etternavn");
     etternavn.addEventListener("input", valetternavn);
 
-    var mobil = document.getElementById("mobil");
+    let mobil = document.getElementById("mobil");
     mobil.addEventListener("input", valMobil);
 
-    var passord = document.getElementById("password");
+    let passord = document.getElementById("password");
     passord.addEventListener("input", valPassord);
 
-    var passordrep = document.getElementById("passordRepetert");
+    let passordrep = document.getElementById("passordRepetert");
     passordrep.addEventListener("input", valPassordene);
 
 });

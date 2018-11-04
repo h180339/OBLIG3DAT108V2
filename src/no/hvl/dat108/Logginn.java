@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * A servlet that shows a log in page
+ * @author Gruppe 19
+ * @version 1.0.0
+ */
 @WebServlet(name = "Logginn", urlPatterns = "/logginn")
 public class Logginn extends HttpServlet {
     int loginTime;
@@ -18,15 +23,27 @@ public class Logginn extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;
 
+    /**
+     * Gets the init parameter and assigns it to loginTime
+     *
+     * @throws ServletException
+     */
     @Override
     public void init() throws ServletException {
         loginTime = Integer.parseInt(getServletConfig().getInitParameter("LoginTime"));
     }
 
+    /**
+     * Logs user in if cell number and password is correct
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String mobil = StringEscapeUtils.escapeHtml4(request.getParameter("mobil"));
         String passord = StringEscapeUtils.escapeHtml4(request.getParameter("passord"));
-
 
         //tester om mobil eller passord er tom
         if(mobil.equals("") || passord.equals("")) {
@@ -47,14 +64,20 @@ public class Logginn extends HttpServlet {
             response.sendRedirect("/deltagerliste");
         } else {
             request.setAttribute("feilmelding", "Feil mobil nummer eller passord");
-
             request.getRequestDispatcher("WEB-INF/Logginn.jsp").forward(request, response);
         }
     }
 
+    /**
+     * Shows log in page or deltagerliste, depending on if the users is already logged in
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //request.getRequestDispatcher("WEB-INF/Logginn.jsp").forward(request, response);
-        //test test
+
         HttpSession session = request.getSession(false);
 
         if(session == null) {
